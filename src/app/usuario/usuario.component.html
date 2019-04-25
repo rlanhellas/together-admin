@@ -1,12 +1,21 @@
-<table>
+<table datatable class="row-border hover">
+  <thead>
   <tr>
-  <td>Login</td>
-  <td>Senha</td>
-  <td>Ativo</td>
+    <th>Login</th>
+    <th>Ativo</th>
+    <th></th>
   </tr>
+  </thead>
+  <tbody>
   <tr *ngFor="let usuario of usuarios | async">
     <td>{{usuario.login}}</td>
-    <td>{{usuario.senha}}</td>
-    <td>{{usuario.ativo}}</td>
+    <td [class.text-success]="usuario.ativo"
+        [class.text-danger]="!usuario.ativo">
+      {{usuario.ativo ? 'Sim' : 'Não'}}</td>
+    <td>
+      <fa-icon [icon]="iconeAlterar"></fa-icon>
+      <fa-icon [icon]="iconeRemover"></fa-icon>
+    </td>
   </tr>
+  </tbody>
 </table>

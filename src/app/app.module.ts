@@ -8,6 +8,8 @@ import { UsuarioComponent } from './usuario/usuario.component';
 import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from "@angular/common/http";
 import {UsuarioService} from "./usuario/usuario.service";
+import {DataTablesModule} from "angular-datatables";
+import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import {UsuarioService} from "./usuario/usuario.service";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    DataTablesModule,
+    FontAwesomeModule
   ],
   providers: [UsuarioService],
   bootstrap: [AppComponent]
